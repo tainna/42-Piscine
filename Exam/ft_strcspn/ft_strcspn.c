@@ -1,0 +1,32 @@
+#include<string.h>
+
+size_t	ft_strcspn(const char *s, const char *reject)
+{
+    size_t i = 0;
+    size_t b = 0;
+    
+    while(s[i])
+    {
+        b = 0;
+        while(reject[b])
+        {
+            if(s[i] == reject[b])
+                return(i);
+            b++;
+        }
+        i++;
+    }
+    return(i); 
+}
+// #include <stdio.h>
+
+// int main(int ac, char **av)
+// {
+//     if (ac == 3)
+//     {
+//         size_t r = ft_strcspn(av[1], av[2]);
+//         printf("%zu\n", r);
+//     }
+//     else
+//         printf("Uso: ./a.out <string> <reject>\n");
+// }
